@@ -30,7 +30,7 @@ Plaintext
 Clone the Repository:
 
 Bash
-git clone https://github.com/your-username/skillgenome-x.git
+git clone https://github.com/jamuna9495/skillup-.git
 Open the Project: Simply open the index.html file in any modern web browser (Chrome, Edge, Safari). No server or database is required as it runs on the TinyWorld Offline AI principle.
 
 📖 Usage Instructions
