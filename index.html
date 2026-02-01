@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillGenome X | TinyWorld AI Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="genCaptcha()">
+    <div class="container">
+        <header>
+            <h1>SkillGenome <span class="highlight">X</span></h1>
+            <p>Powered by TinyWorld AI &bull; <span id="status">System Online</span></p>
+        </header>
+
+        <section class="panel" id="inputPanel">
+            <div class="grid">
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" id="name" placeholder="E.g. Arjun Kumar">
+                </div>
+                <div class="input-group">
+                    <label>Age</label>
+                    <input type="number" id="age" placeholder="22">
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="input-group">
+                    <label>Nation & State</label>
+                    <input type="text" id="nation" placeholder="India, Tamil Nadu">
+                </div>
+                <div class="input-group">
+                    <label>City / Hub</label>
+                    <input type="text" id="city" placeholder="Chennai">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>University / Innovation Lab</label>
+                <input type="text" id="university" placeholder="IIT / Anna University">
+            </div>
+
+            <div class="input-group">
+                <label>Identify Your Skill Cluster</label>
+                <select id="skillSelect">
+                    <optgroup label="Technology & IT">
+                        <option value="data">Data Analysis & Visualization</option>
+                        <option value="cyber">Cybersecurity & Defense</option>
+                        <option value="cloud">Cloud Computing & Architecture</option>
+                        <option value="prog">Software Engineering (Java/Python)</option>
+                        <option value="web">Full Stack Web Development</option>
+                    </optgroup>
+                    <optgroup label="Creative & Business">
+                        <option value="design">UI/UX & Creative Design</option>
+                        <option value="market">Digital Marketing & SEO</option>
+                        <option value="finance">Accounting & Finance</option>
+                    </optgroup>
+                    <optgroup label="Service & Industrial">
+                        <option value="nurse">Healthcare & Nursing</option>
+                        <option value="teach">Teaching & Mentorship</option>
+                        <option value="machinery">Specialized Machinery Ops</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="captcha-area">
+                <label>AI Security Verification (Captcha Solver)</label>
+                <div class="captcha-box">
+                    <span id="captchaDisplay"></span>
+                    <button type="button" onclick="genCaptcha()">🔄</button>
+                </div>
+                <input type="text" id="captchaInput" placeholder="Type the code above">
+            </div>
+
+            <button type="button" class="btn-main" onclick="runInference()">Generate Skill Genome & Resume</button>
+        </section>
+
+        <div id="result" class="hidden">
+            <div class="resume-card" id="printableResume">
+                <div class="resume-header">
+                    <h2 id="resName"></h2>
+                    <p id="resContact"></p>
+                </div>
+                <div class="resume-body">
+                    <div class="role-badge">Official Role: <span id="resJob"></span></div>
+                    
+                    <h3>Professional Summary</h3>
+                    <p id="resDesc"></p>
+
+                    <h3>Skill DNA Markers</h3>
+                    <div id="resSkills" class="skill-tags"></div>
+
+                    <div class="learning-section">
+                        <div id="ytArea"></div>
+                        <div class="qr-box">
+                            <img id="qrCodeImg" src="" alt="Learning QR">
+                            <p>Scan to Learn</p>
+                        </div>
+                    </div>
+
+                    <h3>Institutional DNA</h3>
+                    <p id="resUni"></p>
+                    
+                    <div class="ai-footer">
+                        <small>TinyWorld AI Confidence Score</small>
+                        <div class="score-bar"><div id="scoreFill" class="score-fill"></div></div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-print" onclick="window.print()">Download Official Resume (PDF)</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
